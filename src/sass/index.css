@@ -6,10 +6,8 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
-  line-height: 1.15;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
 
 /* Sections
@@ -44,12 +42,9 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  box-sizing: content-box;
-  /* 1 */
-  height: 0;
-  /* 1 */
-  overflow: visible;
-  /* 2 */
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
 }
 
 /**
@@ -57,10 +52,8 @@ hr {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 pre {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /* Text-level semantics
@@ -77,12 +70,10 @@ a {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
-  border-bottom: none;
-  /* 1 */
-  text-decoration: underline;
-  /* 2 */
-  text-decoration: underline dotted;
-  /* 2 */
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -100,10 +91,8 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /**
@@ -153,14 +142,10 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  line-height: 1.15;
-  /* 1 */
-  margin: 0;
-  /* 2 */
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
 }
 
 /**
@@ -168,8 +153,7 @@ textarea {
  * 1. Show the overflow in Edge.
  */
 button,
-input {
-  /* 1 */
+input { /* 1 */
   overflow: visible;
 }
 
@@ -178,8 +162,7 @@ input {
  * 1. Remove the inheritance of text transform in Firefox.
  */
 button,
-select {
-  /* 1 */
+select { /* 1 */
   text-transform: none;
 }
 
@@ -228,18 +211,12 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  box-sizing: border-box;
-  /* 1 */
-  color: inherit;
-  /* 2 */
-  display: table;
-  /* 1 */
-  max-width: 100%;
-  /* 1 */
-  padding: 0;
-  /* 3 */
-  white-space: normal;
-  /* 1 */
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
 }
 
 /**
@@ -262,10 +239,8 @@ textarea {
  */
 [type=checkbox],
 [type=radio] {
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
 }
 
 /**
@@ -281,10 +256,8 @@ textarea {
  * 2. Correct the outline style in Safari.
  */
 [type=search] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
 }
 
 /**
@@ -299,10 +272,8 @@ textarea {
  * 2. Change font properties to `inherit` in Safari.
  */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
 }
 
 /* Interactive
@@ -718,7 +689,6 @@ footer .copyright a:visited {
   .hdecor-box h2 {
     margin: 3.125rem 2rem 3.125rem 0;
   }
-
   .hdecor-box.center h2 {
     margin: 3.125rem 2rem 3.125rem 0;
   }
@@ -728,7 +698,6 @@ footer .copyright a:visited {
     margin-right: 2rem;
     margin-left: 0;
   }
-
   .hdecor-box.center h2 {
     margin-left: 2rem;
   }
@@ -756,19 +725,12 @@ footer .copyright a:visited {
 }
 
 .noselect {
-  -webkit-touch-callout: none;
-  /* iOS Safari */
-  -webkit-user-select: none;
-  /* Safari */
-  -khtml-user-select: none;
-  /* Konqueror HTML */
-  -moz-user-select: none;
-  /* Old versions of Firefox */
-  -ms-user-select: none;
-  /* Internet Explorer/Edge */
-  user-select: none;
-  /* Non-prefixed version, currently
-     supported by Chrome, Edge, Opera and Firefox */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+   supported by Chrome, Edge, Opera and Firefox */
 }
 
 .medium {
@@ -787,7 +749,6 @@ footer .copyright a:visited {
   .desktop-view {
     display: block !important;
   }
-
   .mobile-view {
     display: none !important;
   }
@@ -1047,7 +1008,7 @@ header .main-logo {
 .mobile-nav hr {
   width: 5em;
   border: 0px solid white;
-  border-bottom: 1px solid #7e7e7e;
+  border-bottom: 1px solid rgb(126, 126, 126);
   margin: 0.75em 0 1.5em auto;
   padding: 0;
 }
@@ -1083,36 +1044,29 @@ header .main-logo {
     display: flex;
     display: -webkit-flex;
   }
-
   .desktop-nav ul {
     display: flex;
     display: -webkit-flex;
   }
-
   .desktop-nav ul a {
     display: flex;
     display: -webkit-flex;
     align-items: center;
     margin: 0 0.5em;
   }
-
   .desktop-nav ul li:hover {
     transition: color 0.25s;
     color: #ffb152;
   }
-
   .desktop-nav ul li:not(:hover) {
     transition: color 0.25s;
   }
-
   .desktop-nav ul a li {
     color: white;
   }
-
   .mobile-menu {
     display: none;
   }
-
   .nav-bar .social {
     grid-area: 1/3/span 1/span 1;
     justify-self: right;
@@ -1121,7 +1075,72 @@ header .main-logo {
 }
 #conversion-whiz {
   display: flex;
-  background-color: greenyellow;
+  padding-top: 2em;
+  justify-content: center;
+  flex-direction: column;
+}
+#conversion-whiz > div {
+  width: 500px;
+  margin: 0 auto;
+}
+#conversion-whiz #conversion-type {
+  width: 100%;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border: 1px solid #dadce0;
+  border-radius: 0.25em;
+  background-color: #f8f9fa;
+}
+#conversion-whiz .converter {
+  display: grid;
+  grid-template-columns: 1fr 52px 1fr;
+}
+#conversion-whiz .converter input {
+  width: 100%;
+  height: 50px;
+  font-size: 1.5em;
+  text-align: center;
+  border: 1px solid #dadce0;
+  /* Chrome, Safari, Edge, Opera */
+  /* Firefox */
+}
+#conversion-whiz .converter input::-webkit-outer-spin-button, #conversion-whiz .converter input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#conversion-whiz .converter input[type=number] {
+  -moz-appearance: textfield;
+}
+#conversion-whiz .converter label {
+  padding: 0.75em;
+  display: block;
+  text-align: center;
+  font-size: 0.85em;
+  background-color: #f8f9fa;
+  border: 1px solid #dadce0;
+  border-top: 0px solid #dadce0;
+}
+#conversion-whiz .equals {
+  margin: 4px;
+  text-align: center;
+  font-size: 2em;
+}
+#conversion-whiz .formula {
+  grid-area: 2/1/span 1/span 3;
+}
+#conversion-whiz .formula .label {
+  display: inline-block;
+  font-size: 0.85em;
+  padding: 0.15em 0.25em;
+  color: white;
+  font-weight: 400;
+  background-color: #f9ab00;
+}
+#conversion-whiz .formula .equation {
+  display: inline-block;
+  font-size: 0.95em;
+  margin-left: 0.5em;
+  font-weight: 400;
 }
 
 main section .description p {
@@ -1214,6 +1233,4 @@ main section .description a:not(:hover)::before {
   overflow: hidden;
   z-index: -10;
   padding: 2em;
-}
-
-/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */

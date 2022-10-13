@@ -1,4 +1,5 @@
 @import "./boilerplate";
+@import "./conversion";
 
 main section .description {  //--------------------------------------------------------------
   p {
@@ -107,6 +108,7 @@ main section .description {  //-------------------------------------------------
       border-bottom-right-radius: .625em;
       overflow: hidden;
       z-index: -10;
+      padding: 2em;
     }
   }
-}
+} 

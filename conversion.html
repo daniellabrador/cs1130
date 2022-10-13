@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="US">
+<head>
+  <!-- PAGE META -->
+    <!-- Title:         Conversion Whiz -->
+    <!-- Description:   Maximum of 160 characters only. -->
+    <!-- Purpose:       This project is intended to showcase HTML and JavaScript as languages. -->
+    <!-- Link Shortcut: ~relative-path-->
+  
+  <!-- DETAILS -->
+  <title>Conversion Whiz | CS 1130 Projects</title>
+  <meta name="author" content="Daniel Labrador">
+  <meta name="description" content="Maximum of 160 characters only.">
+
+  <!-- DISPLAY -->
+  <link rel="stylesheet" type="text/css" href="./src/sass/index.css">
+  <link rel="shortcut icon" href="./src/img/logo/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="computer science, html, javascript, js, college">
+  <meta name="theme-color" content="#000000"/>
+
+  <!-- OTHER SCRIPTS -->
+  <script src="https://kit.fontawesome.com/ba3abb2535.js" crossorigin="anonymous"></script>
+  <script src="./src/script/jquery.min.js" defer></script>
+  <script src="./src/script/boilerplate.js" defer></script>
+  <script src="./src/script/index.js" defer></script>
+</head>
+
+<body>
+  <!-------------- HEADER -----------------><header><div class="nav-bar" id="nav-bar"><div class="mobile-menu nav-bar-element" id="mobile-menu-open"><span class="noselect"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><style>path {fill: #fff}</style><g fill="var(--color-default)"><path d="M8 14h7a1 1 0 000-2H8a1 1 0 000 2zM1 4h14a1 1 0 000-2H1a1 1 0 000 2zM1 9h14a1 1 0 000-2H1a1 1 0 000 2z"></path></g></svg> </span> </div> <div class="main-navigation-items"> <div id="main-logo-container" class="main-logo-container nav-bar-element"> <span class="main-logo-text noselect">Daniel Labrador</span> <a href="http://daniellabrador.com" class = "main-logo-link"> <img id="main-logo" src="./src/img/logo/SVG/logo-light.svg" alt="Brand logo" class="main-logo mobile"> </a> </div> <nav class="desktop-nav" aria-label="Desktop"> <ul> <a href="https://daniellabrador.com/cs1130"> <li>Home</li> </a> <a href="https://daniellabrador.com/cs1130/temperature"> <li>Temperature</li> </a> <a href="https://daniellabrador.com/cs1130/tax"> <li>Tax</li> </a> <a href="https://daniellabrador.com/cs1130/calculator"> <li>Calculator</li> </a> <a href="https://daniellabrador.com/cs1130/payroll"> <li>Payroll</li> </a> </ul> </nav> </div> <div class="social nav-bar-element"> <a href="https://instagram.com/daniellabrador_"> <div class="social-icon"> <i class="fab fa-instagram"></i> </div> </a> <a href="https://www.linkedin.com/in/daniellabrador00/"> <div class="social-icon"> <i class="fab fa-linkedin-in"></i> </div> </a> <a href="https://github.com/daniellabrador"> <div class="social-icon"> <i class="fab fa-github"></i> </div> </a> </div> </div> <!-- To prevent reference error, I have to create this class --> <div class="clear-nav-bar" style="display:none"></div> <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile"> <div class="social"> <a href="https://instagram.com/daniellabrador_"> <div class="social-icon"> <i class="fab fa-instagram"></i> </div> </a> <a href="https://www.linkedin.com/in/daniellabrador00/"> <div class="social-icon"> <i class="fab fa-linkedin-in"></i> </div> </a> <a href="https://github.com/daniellabrador"> <div class="social-icon"> <i class="fab fa-github"></i> </div> </a> </div> <hr> <ul> <a href="https://daniellabrador.com/cs1130"> <li>Home</li> </a> <a href="https://daniellabrador.com/cs1130/temperature"> <li>Temperature</li> </a> <a href="https://daniellabrador.com/cs1130/tax"> <li>Tax</li> </a> <a href="https://daniellabrador.com/cs1130/calculator"> <li>Calculator</li> </a> <a href="https://daniellabrador.com/cs1130/payroll"> <li>Payroll</li> </a> </ul> <div class="mobile-menu-close"><span class="noselect">Close</span><div id='mobile-menu-close'></div></div> </nav> </header>
+  
+  <!---------------  MAIN  ------------------>
+  <main><section class="col-grid">
+    <div class="description col-span-12">
+      <h1>Conversion Whiz</h1>
+      <p>Maximum of 160 characters only. This project is intended to showcase HTML and JavaScript as languages. See <a href="https://github.com/daniellabrador/cs1130/~relative-path">source code</a>.</p>
+    </div>
+    <div id="app-window" class="col-span-12"><div id="app-header-design"><div></div><div></div><div></div><p class="noselect">Conversion Whiz</p></div><div id="app-container"><div id="app">
+
+      
+
+      <form id="conversion-whiz">
+        <!-- Conversion Type -->
+        <div id="conversion-type-container">
+          <select name="conversion-type" id="conversion-type">
+            <option value="temperature">Temperature</option>
+            <option value="Length">Length</option>
+          </select>
+        </div>
+
+      
+        <!-- Temperature Converter -->
+        <div id="temperature" class="converter">
+          <div id="celsius-container">
+            <input type="number" name="celsius" id="celsius" value="0">
+            <label for="celsius">Celsius</label>
+          </div>
+          
+          <p class="equals">=</p>
+
+          <div id="fahrenheit-container">
+            <input type="number" name="fahrenheit" id="fahrenheit">
+            <label for="fahrenheit">Fahrenheit</label>
+          </div>
+
+          <div class="formula">
+            <p class="label">Formula</p>
+            <p class="equation" id="temperature-equation"></p>
+          </div>
+        </div>
+
+        <!-- Temperature Converter -->
+        <div id="length" class="converter">
+          <div id="meter-container">
+            <input type="text" name="meter" id="meter" value="1" >
+            <label for="meter">Meter</label>
+          </div>
+
+          <p class="equals">=</p>
+
+          <div id="foot-container">
+            <input type="number" name="foot" id="foot">
+            <label for="foot">Foot</label>
+          </div>
+
+          <div class="formula">
+            <p class="label">Formula</p>
+            <p class="equation" id="length-equation"></p>
+          </div>
+        </div>
+      </form>
+
+      <script>
+        // SET CONVERSION TYPE
+        // Access converter selector, conversion containers and input elements
+        const conversionType = document.getElementById("conversion-type")
+        const temperature  = document.getElementById("temperature")
+        const Length  = document.getElementById("length")
+        const celsius  = document.getElementById("celsius")
+        const fahrenheit  = document.getElementById("fahrenheit")
+        const temperatureEquation = document.getElementById("temperature-equation")
+        const meter  = document.getElementById("meter")
+        const foot  = document.getElementById("foot")
+        const lengthEquation = document.getElementById("length-equation")
+
+        // Set default values
+        temperature.style.display = "grid"
+        Length.style.display = "none"
+        temperatureEquation.innerHTML = `(<strong>0°C</strong> × 9/5) + 32 = <strong>32°F</strong>`
+        lengthEquation.innerHTML = `for an approximate result, multiply the length value by 3.281`
+        fahrenheit.value = (0 * 9/5) + 32
+        foot.value = Math.round((1*100)*(1/2.54)*(1/12)*10000)/10000
+
+        const setConversionType = (event) => {
+          // Get conversion type
+          const conversionTypeValue = conversionType.value
+
+          // Reset values
+          temperatureEquation.innerHTML = `(<strong>0°C</strong> × 9/5) + 32 = <strong>32°F</strong>`
+          lengthEquation.innerHTML = `for an approximate result, multiply the length value by 3.281`
+          celsius.value = 0
+          fahrenheit.value = (0 * 9/5) + 32
+          meter.value = 1
+          foot.value = Math.round((1*100)*(1/2.54)*(1/12)*10000)/10000
+
+          // Set selected converter
+          if (conversionTypeValue === 'temperature'){
+            temperature.style.display = "grid"
+            Length.style.display = "none"
+          } else {
+            temperature.style.display = "none"
+            Length.style.display = "grid"
+          }
+        }
+
+        const convertTemperature = (event) => {
+
+          // Get form values
+          const temperatureType = event.target.name
+          const temperatureValue = event.target.value
+          if (temperatureValue === ''){
+            celsius.value = ''
+            fahrenheit.value = ''
+            temperatureEquation.innerHTML = ``
+          } else if (temperatureType === 'celsius'){
+            const fahrenheitValue = (temperatureValue * 9/5) + 32
+            fahrenheit.value = fahrenheitValue
+            temperatureEquation.innerHTML = `(<strong>${temperatureValue*1}°C</strong> × 9/5) + 32 = <strong>${fahrenheitValue}°F</strong>`
+          } else if (temperatureType === 'fahrenheit') {
+            const celsiusValue = (temperatureValue * 9/5) + 32
+            celsius.value = celsiusValue
+            temperatureEquation.innerHTML = `(<strong>${temperatureValue*1}°F</strong> − 32) × 5/9 = <strong>${celsiusValue}°C
+</strong>`
+          }
+        }
+
+        const convertLength = (event) => {
+          // Get form values
+          const lengthType = event.target.name
+          const lengthValue = event.target.value
+
+
+          if (lengthValue === ''){
+            meter.value = ''
+            foot.value = ''
+            lengthEquation.innerHTML = ``
+          } else if (lengthType === 'meter'){
+            const footValue = (lengthValue*100)*(1/2.54)*(1/12)
+            foot.value = footValue
+            lengthEquation.innerHTML = `for an approximate result, multiply the length value by 3.281`
+          } else if (lengthType === 'foot') {
+            const meterValue = (lengthValue*12)*(2.54/100)
+            meter.value = meterValue
+            lengthEquation.innerHTML = `for an approximate result, divide the length value by 3.281`
+          }
+        }
+
+        // Add Event Listeners
+        conversionType.addEventListener("change", setConversionType)
+        celsius.addEventListener("keyup", convertTemperature)
+        fahrenheit.addEventListener("keyup", convertTemperature)
+        meter.addEventListener("keyup", convertLength)
+        foot.addEventListener("keyup", convertLength)
+
+      </script>
+
+
+
+
+
+
+    </div></div></div>
+  </section></main>
+  
+  <!-------------- FOOTER -----------------> <footer> <p class="copyright">&copy; <a href="https://daniellabrador.com">Thony Danielle Labrador</a> 2022. All Rights Reserved.</p> <div class="social"> <a href="https://instagram.com/daniellabrador_"> <div class="social-icon"> <i class="fab fa-instagram"></i> </div> </a> <a href="https://www.linkedin.com/in/daniellabrador00/"> <div class="social-icon"> <i class="fab fa-linkedin-in"></i> </div> </a> <a href="https://github.com/daniellabrador"> <div class="social-icon"> <i class="fab fa-github"></i> </div> </a> </div> </footer></body>
+</html>
