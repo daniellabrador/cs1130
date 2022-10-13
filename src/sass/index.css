@@ -1073,6 +1073,10 @@ header .main-logo {
     padding: 1rem;
   }
 }
+#app {
+  min-height: calc(100vh - 27em) !important;
+}
+
 #conversion-whiz {
   display: flex;
   padding-top: 2em;
@@ -1223,11 +1227,12 @@ main section .description a:not(:hover)::before {
 }
 #app-window #app-container {
   overflow-y: auto;
-  overflow-x: inherit;
+  overflow-x: scroll;
 }
 #app-window #app-container #app {
   display: block;
   min-height: calc(100vh - 22.175em);
+  min-width: 560px;
   border-bottom-left-radius: 0.625em;
   border-bottom-right-radius: 0.625em;
   overflow: hidden;

@@ -1,3 +1,7 @@
+#app {
+  min-height: calc(100vh - 27em) !important;
+}
+
 #conversion-whiz {
   display: flex;
   padding-top: 2em;
