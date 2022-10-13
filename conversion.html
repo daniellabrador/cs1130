@@ -3,14 +3,14 @@
 <head>
   <!-- PAGE META -->
     <!-- Title:         Conversion Whiz -->
-    <!-- Description:   Maximum of 160 characters only. -->
-    <!-- Purpose:       This project is intended to showcase HTML and JavaScript as languages. -->
-    <!-- Link Shortcut: ~relative-path-->
+    <!-- Description:   Conversion Whiz is a conversion tool for temperature and length units. This tool is only limited to Fahrenheit, Celsius, meter, and foot units. -->
+    <!-- Purpose:       This project is intended to showcase HTML and JavaScript basics and DOM manipulaation. -->
+    <!-- Link Shortcut: -->
   
   <!-- DETAILS -->
   <title>Conversion Whiz | CS 1130 Projects</title>
   <meta name="author" content="Daniel Labrador">
-  <meta name="description" content="Maximum of 160 characters only.">
+  <meta name="description" content="Conversion Whiz is a conversion tool for temperature and length units. This tool is only limited to Fahrenheit, Celsius, meter, and foot units.">
 
   <!-- DISPLAY -->
   <link rel="stylesheet" type="text/css" href="./src/sass/index.css">
@@ -28,13 +28,13 @@
 </head>
 
 <body>
-  <!-------------- HEADER -----------------><header><div class="nav-bar" id="nav-bar"><div class="mobile-menu nav-bar-element" id="mobile-menu-open"><span class="noselect"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><style>path {fill: #fff}</style><g fill="var(--color-default)"><path d="M8 14h7a1 1 0 000-2H8a1 1 0 000 2zM1 4h14a1 1 0 000-2H1a1 1 0 000 2zM1 9h14a1 1 0 000-2H1a1 1 0 000 2z"></path></g></svg> </span> </div> <div class="main-navigation-items"> <div id="main-logo-container" class="main-logo-container nav-bar-element"> <span class="main-logo-text noselect">Daniel Labrador</span> <a href="http://daniellabrador.com" class = "main-logo-link"> <img id="main-logo" src="./src/img/logo/SVG/logo-light.svg" alt="Brand logo" class="main-logo mobile"> </a> </div> <nav class="desktop-nav" aria-label="Desktop"> <ul> <a href="https://daniellabrador.com/cs1130"> <li>Home</li> </a> <a href="https://daniellabrador.com/cs1130/temperature"> <li>Temperature</li> </a> <a href="https://daniellabrador.com/cs1130/tax"> <li>Tax</li> </a> <a href="https://daniellabrador.com/cs1130/calculator"> <li>Calculator</li> </a> <a href="https://daniellabrador.com/cs1130/payroll"> <li>Payroll</li> </a> </ul> </nav> </div> <div class="social nav-bar-element"> <a href="https://instagram.com/daniellabrador_"> <div class="social-icon"> <i class="fab fa-instagram"></i> </div> </a> <a href="https://www.linkedin.com/in/daniellabrador00/"> <div class="social-icon"> <i class="fab fa-linkedin-in"></i> </div> </a> <a href="https://github.com/daniellabrador"> <div class="social-icon"> <i class="fab fa-github"></i> </div> </a> </div> </div> <!-- To prevent reference error, I have to create this class --> <div class="clear-nav-bar" style="display:none"></div> <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile"> <div class="social"> <a href="https://instagram.com/daniellabrador_"> <div class="social-icon"> <i class="fab fa-instagram"></i> </div> </a> <a href="https://www.linkedin.com/in/daniellabrador00/"> <div class="social-icon"> <i class="fab fa-linkedin-in"></i> </div> </a> <a href="https://github.com/daniellabrador"> <div class="social-icon"> <i class="fab fa-github"></i> </div> </a> </div> <hr> <ul> <a href="https://daniellabrador.com/cs1130"> <li>Home</li> </a> <a href="https://daniellabrador.com/cs1130/temperature"> <li>Temperature</li> </a> <a href="https://daniellabrador.com/cs1130/tax"> <li>Tax</li> </a> <a href="https://daniellabrador.com/cs1130/calculator"> <li>Calculator</li> </a> <a href="https://daniellabrador.com/cs1130/payroll"> <li>Payroll</li> </a> </ul> <div class="mobile-menu-close"><span class="noselect">Close</span><div id='mobile-menu-close'></div></div> </nav> </header>
+  <!-------------- HEADER -----------------><header><div class="nav-bar" id="nav-bar"><div class="mobile-menu nav-bar-element" id="mobile-menu-open"><span class="noselect"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><style>path {fill: #fff}</style><g fill="var(--color-default)"><path d="M8 14h7a1 1 0 000-2H8a1 1 0 000 2zM1 4h14a1 1 0 000-2H1a1 1 0 000 2zM1 9h14a1 1 0 000-2H1a1 1 0 000 2z"></path></g></svg> </span> </div> <div class="main-navigation-items"> <div id="main-logo-container" class="main-logo-container nav-bar-element"> <span class="main-logo-text noselect">Daniel Labrador</span> <a href="http://daniellabrador.com" class = "main-logo-link"> <img id="main-logo" src="./src/img/logo/SVG/logo-light.svg" alt="Brand logo" class="main-logo mobile"> </a> </div> <nav class="desktop-nav" aria-label="Desktop"> <ul> <a href="https://daniellabrador.com/cs1130"> <li>Home</li> </a> <a href="https://daniellabrador.com/cs1130/conversion"> <li>Conversion</li> </a> <a href="https://daniellabrador.com/cs1130/tax"> <li>Tax</li> </a> <a href="https://daniellabrador.com/cs1130/calculator"> <li>Calculator</li> </a> <a href="https://daniellabrador.com/cs1130/payroll"> <li>Payroll</li> </a> </ul> </nav> </div> <div class="social nav-bar-element"> <a href="https://instagram.com/daniellabrador_"> <div class="social-icon"> <i class="fab fa-instagram"></i> </div> </a> <a href="https://www.linkedin.com/in/daniellabrador00/"> <div class="social-icon"> <i class="fab fa-linkedin-in"></i> </div> </a> <a href="https://github.com/daniellabrador"> <div class="social-icon"> <i class="fab fa-github"></i> </div> </a> </div> </div> <!-- To prevent reference error, I have to create this class --> <div class="clear-nav-bar" style="display:none"></div> <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile"> <div class="social"> <a href="https://instagram.com/daniellabrador_"> <div class="social-icon"> <i class="fab fa-instagram"></i> </div> </a> <a href="https://www.linkedin.com/in/daniellabrador00/"> <div class="social-icon"> <i class="fab fa-linkedin-in"></i> </div> </a> <a href="https://github.com/daniellabrador"> <div class="social-icon"> <i class="fab fa-github"></i> </div> </a> </div> <hr> <ul> <a href="https://daniellabrador.com/cs1130"> <li>Home</li> </a> <a href="https://daniellabrador.com/cs1130/conversion"> <li>Conversion</li> </a> <a href="https://daniellabrador.com/cs1130/tax"> <li>Tax</li> </a> <a href="https://daniellabrador.com/cs1130/calculator"> <li>Calculator</li> </a> <a href="https://daniellabrador.com/cs1130/payroll"> <li>Payroll</li> </a> </ul> <div class="mobile-menu-close"><span class="noselect">Close</span><div id='mobile-menu-close'></div></div> </nav> </header>
   
   <!---------------  MAIN  ------------------>
   <main><section class="col-grid">
     <div class="description col-span-12">
       <h1>Conversion Whiz</h1>
-      <p>Maximum of 160 characters only. This project is intended to showcase HTML and JavaScript as languages. See <a href="https://github.com/daniellabrador/cs1130/~relative-path">source code</a>.</p>
+      <p>Conversion Whiz is a conversion tool for temperature and length units. This tool is only limited to Fahrenheit, Celsius, meter, and foot units. This project is intended to showcase HTML and JavaScript basics and DOM manipulaation. See <a href="https://github.com/daniellabrador/cs1130/">source code</a>.</p>
     </div>
     <div id="app-window" class="col-span-12"><div id="app-header-design"><div></div><div></div><div></div><p class="noselect">Conversion Whiz</p></div><div id="app-container"><div id="app">
 
@@ -166,11 +166,11 @@
             foot.value = ''
             lengthEquation.innerHTML = ``
           } else if (lengthType === 'meter'){
-            const footValue = (lengthValue*100)*(1/2.54)*(1/12)
+            const footValue = Math.round((lengthValue*100)*(1/2.54)*(1/12)*1000000)/1000000
             foot.value = footValue
             lengthEquation.innerHTML = `for an approximate result, multiply the length value by 3.281`
           } else if (lengthType === 'foot') {
-            const meterValue = (lengthValue*12)*(2.54/100)
+            const meterValue = Math.round((lengthValue*12)*(2.54/100)*1000000)/1000000
             meter.value = meterValue
             lengthEquation.innerHTML = `for an approximate result, divide the length value by 3.281`
           }
