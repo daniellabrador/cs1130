@@ -2,16 +2,16 @@
 <html lang="US">
 <head>
   <!-- PAGE META -->
-    <!-- Title:         ~Application -->
-    <!-- Description:   Maximum of 160 characters only. -->
-    <!-- Limitations:   Share limitations. -->
-    <!-- Purpose:       This project is intended to showcase HTML and JavaScript basics and DOM manipulation. -->
+    <!-- Title:         NitroTax -->
+    <!-- Description:   NitroTax is a tax calculator application that is designed to compute the income tax of a given net taxable income based on the graduated income tax table of the TRAIN law. -->
+    <!-- Limitations:   NitroTax is a conversion tool for temperature and length units. This tool is only limited to the Philippine peso (₱). -->
+    <!-- Purpose:       This project is intended to emphasize the use of conditional statements using JavaScript syntax. -->
     <!-- Link Shortcut: -->
   
   <!-- DETAILS -->
-  <title>~Application | CS 1130 Projects</title>
+  <title>NitroTax | CS 1130 Projects</title>
   <meta name="author" content="Daniel Labrador">
-  <meta name="description" content="Maximum of 160 characters only.">
+  <meta name="description" content="NitroTax is a tax calculator application that is designed to compute the income tax of a given net taxable income based on the graduated income tax table of the TRAIN law.">
 
   <!-- DISPLAY -->
   <link rel="stylesheet" type="text/css" href="./src/sass/index.css">
@@ -34,17 +34,125 @@
   <!---------------  MAIN  ------------------>
   <main><section class="col-grid">
     <div class="description col-span-12">
-      <h1>~Application</h1>
-      <p>Maximum of 160 characters only. Share limitations. This project is intended to showcase HTML and JavaScript basics and DOM manipulation. See <a href="http://github.com/daniellabrador/cs1130/">source code</a>.</p>
+      <h1>NitroTax</h1>
+      <p>NitroTax is a tax calculator application that is designed to compute the income tax of a given net taxable income based on the graduated income tax table of the TRAIN law. This tool is only limited to the Philippine peso (₱). This project is intended to emphasize the use of conditional statements using JavaScript syntax. See <a href="http://github.com/daniellabrador/cs1130/">source code</a>.</p>
     </div>
-    <div id="app-window" class="col-span-12"><div id="app-header-design"><div></div><div></div><div></div><p class="noselect">~Application</p></div><div id="app-container"><div id="app">
+    <div id="app-window" class="col-span-12"><div id="app-header-design"><div></div><div></div><div></div><p class="noselect">NitroTax</p></div><div id="app-container"><div id="app">
 
 
       <!--!--------------- APP WINDOW AND SCRIPT STARTS HERE ------------------>
       <!--TODO: APPLICATION FORM -->
+      <form id="nitrotax">
+
+        <!-- Taxable Income Input Field -->
+        <div id="income" class="calculator">
+          <div id="taxable-income-container">
+            <input type="number" name="taxable-income" id="taxable-income" value="0">
+            <label for="taxable-income">Taxable Income (₱)</label>
+          </div>
+          
+          <p class="equals">=</p>
+
+          <div id="income-tax-container">
+            <input type="text" name="income-tax" id="income-tax" disabled>
+            <label for="income-tax">Income Tax (₱)</label>
+          </div>
+
+          <div class="formula">
+            <p class="label" id="formula-text">Formula</p>
+            <p class="equation" id="income-equation"></p>
+          </div>
+        </div>
+        
+      </form>
 
       <!--TODO: JAVASCRIPT CALCULATION AND DOM MANIPULATION -->
       <script>
+        // ACCESS HTML ELEMENTS
+        const income  = document.getElementById("income")
+        const taxableIncome  = document.getElementById("taxable-income")
+        const incomeTax  = document.getElementById("income-tax")
+        const incomeEquation = document.getElementById("income-equation")
+
+        // SET DEFAULT VALUES
+        income.style.display = "grid"
+        incomeEquation.innerHTML = `(<strong>Taxable Income</strong> - Deduction) x Rate + Fixed = <strong>Income Tax</strong>`
+        incomeTax.value = 0
+
+        // GENERAL TAXATION EQUATION
+        const computeGeneralTax = (_income, _excessOf, _rate, _fixed) => {
+          return ((_income - _excessOf) * _rate + _fixed).toFixed(2)
+        }
+
+        // ADD COMMA
+        const addComma = value => {
+          return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        // COMPUTE TAX 
+        const computeTax = (event) => {
+          // Get form values
+          const incomeValue = event.target.value
+          let excessOf, rate, fixed, error;
+          // incomeEquation.innerHTML = `(<strong>${incomeValue*1}°C</strong> × 9/5) + 32 = <strong>${incomeTaxValue}°F</strong>`
+
+          // Set the values
+          switch (true){
+            case incomeValue <= 250000:
+              excessOf = 0;
+              rate = 0;
+              fixed = 0;
+              break;
+            case incomeValue <= 400000:
+              excessOf = 250000;
+              rate = 0.20;
+              fixed = 0;
+              break;
+            case incomeValue <= 800000:
+              excessOf = 400000;
+              rate = 0.25;
+              fixed = 30000;
+              break;
+            case incomeValue <= 2000000:
+              excessOf = 800000;
+              rate = 0.30;
+              fixed = 130000;
+              break;
+            case incomeValue <= 8000000:
+              excessOf = 2000000;
+              rate = 0.32;
+              fixed = 490000;
+              break;
+            case incomeValue > 8000000:
+              excessOf = 8000000;
+              rate = 0.35;
+              fixed = 2410000;
+              break;
+            default:
+              error = "Error! Please contact the developer.";
+              throw("Error! Please contact the developer.")
+          }
+
+          let incomeTaxValue = computeGeneralTax(incomeValue, excessOf, rate, fixed)
+          incomeTax.value = addComma(incomeTaxValue)
+          incomeEquation.innerHTML = error || `(₱${addComma(incomeValue*1)} - ${addComma(excessOf)}) x ${rate * 100}% + ${addComma(fixed)} = <strong>₱${addComma(incomeTaxValue)}</strong>`
+
+          if (incomeValue === ''){
+            incomeEquation.innerHTML = '(<strong>Taxable Income</strong> - Deduction) x Rate + Fixed = <strong>Income Tax</strong>'
+          }
+
+          if (incomeValue >= 100000000){
+            document.getElementById('formula-text').style.display = 'none';
+          } else {
+            document.getElementById('formula-text').style.display = 'inline-block';
+          }
+        }
+
+        // HIDE FORMULA TEXT IF NUMBER IS TOO BIG
+
+
+        // ADD EVENT LISTENERS
+        taxableIncome.addEventListener("keyup", computeTax)
 
       </script>
 

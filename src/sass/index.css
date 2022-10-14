@@ -1073,6 +1073,11 @@ header .main-logo {
     padding: 1rem;
   }
 }
+#app-list {
+  grid-area: 2/1/span 1/span 12;
+  height: 70vh;
+}
+
 #app {
   min-height: calc(100vh - 27em) !important;
 }
@@ -1147,9 +1152,74 @@ header .main-logo {
   font-weight: 400;
 }
 
-#app-list {
-  grid-area: 2/1/span 1/span 12;
-  height: 70vh;
+#app {
+  min-height: calc(100vh - 24.25em) !important;
+}
+
+#nitrotax {
+  display: flex;
+  padding-top: 2em;
+  justify-content: center;
+  flex-direction: column;
+}
+#nitrotax > div {
+  width: 500px;
+  margin: 0 auto;
+}
+#nitrotax .calculator {
+  display: grid;
+  grid-template-columns: 1fr 52px 1fr;
+}
+#nitrotax .calculator input {
+  width: 100%;
+  height: 50px;
+  font-size: 1.5em;
+  text-align: center;
+  border: 1px solid #dadce0;
+  /* Chrome, Safari, Edge, Opera */
+  /* Firefox */
+}
+#nitrotax .calculator input::-webkit-outer-spin-button, #nitrotax .calculator input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#nitrotax .calculator input[type=number] {
+  -moz-appearance: textfield;
+}
+#nitrotax .calculator label {
+  padding: 0.75em;
+  display: block;
+  text-align: center;
+  font-size: 0.85em;
+  background-color: #f8f9fa;
+  border: 1px solid #dadce0;
+  border-top: 0px solid #dadce0;
+}
+#nitrotax .calculator #income-tax {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+}
+#nitrotax .equals {
+  margin: 4px;
+  text-align: center;
+  font-size: 2em;
+}
+#nitrotax .formula {
+  grid-area: 2/1/span 1/span 3;
+}
+#nitrotax .formula .label {
+  display: inline-block;
+  font-size: 0.85em;
+  padding: 0.15em 0.25em;
+  color: white;
+  font-weight: 400;
+  background-color: #f9ab00;
+}
+#nitrotax .formula .equation {
+  display: inline-block;
+  font-size: 0.95em;
+  margin-left: 0.5em;
+  font-weight: 400;
 }
 
 main section .description p {
