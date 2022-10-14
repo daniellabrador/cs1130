@@ -1147,6 +1147,11 @@ header .main-logo {
   font-weight: 400;
 }
 
+#app-list {
+  grid-area: 2/1/span 1/span 12;
+  height: 70vh;
+}
+
 main section .description p {
   font-weight: normal;
   margin: 0.5em 0 0;
