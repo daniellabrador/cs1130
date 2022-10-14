@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="US">
+<head>
+  <!-- PAGE META -->
+    <!-- Title:         Loopify -->
+    <!-- Description:   Loopify is a calculator app that computes for the Nth factorial, the sum of the first N numbers, and the average of the first N numbers. -->
+    <!-- Limitations:   The application can only accept 1 as the minimum number. -->
+    <!-- Purpose:       This project is intended to emphasize the use of while, do while and for loops. -->
+    <!-- Link Shortcut: -->
+  
+  <!-- DETAILS -->
+  <title>Loopify | CS 1130 Projects</title>
+  <meta name="author" content="Daniel Labrador">
+  <meta name="description" content="Loopify is a calculator app that computes for the Nth factorial, the sum of the first N numbers, and the average of the first N numbers.">
+
+  <!-- DISPLAY -->
+  <link rel="stylesheet" type="text/css" href="./src/sass/index.css">
+  <link rel="shortcut icon" href="./src/img/logo/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="computer science, html, javascript, js, college">
+  <meta name="theme-color" content="#000000"/>
+
+  <!-- OTHER SCRIPTS -->
+  <script src="https://kit.fontawesome.com/ba3abb2535.js" crossorigin="anonymous"></script>
+  <script src="./src/script/jquery.min.js" defer></script>
+  <script src="./src/script/boilerplate.js" defer></script>
+  <script src="./src/script/index.js" defer></script>
+</head>
+
+<body>
+  <!-------------- HEADER -----------------><header><div class="nav-bar" id="nav-bar"><div class="mobile-menu nav-bar-element" id="mobile-menu-open"><span class="noselect"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><style>path {fill: #fff}</style><g fill="var(--color-default)"><path d="M8 14h7a1 1 0 000-2H8a1 1 0 000 2zM1 4h14a1 1 0 000-2H1a1 1 0 000 2zM1 9h14a1 1 0 000-2H1a1 1 0 000 2z"></path></g></svg> </span> </div> <div class="main-navigation-items"> <div id="main-logo-container" class="main-logo-container nav-bar-element"> <span class="main-logo-text noselect">Daniel Labrador</span> <a href="http://daniellabrador.com" class = "main-logo-link"> <img id="main-logo" src="./src/img/logo/SVG/logo-light.svg" alt="Brand logo" class="main-logo mobile"> </a> </div> <nav class="desktop-nav" aria-label="Desktop"> <ul> <a href="https://daniellabrador.com/cs1130"> <li>Home</li> </a> <a href="./conversion"> <li>Conversion</li> </a> <a href="./tax"> <li>Tax</li> </a> <a href="./loopify"> <li>Loopify</li> </a> <a href="./payroll"> <li>Payroll</li> </a> </ul> </nav> </div> <div class="social nav-bar-element"> <a href="https://go.daniellabrador.com/instagram"> <div class="social-icon"> <i class="fab fa-instagram"></i> </div> </a> <a href="https://go.daniellabrador.com/linkedin"> <div class="social-icon"> <i class="fab fa-linkedin-in"></i> </div> </a> <a href="https://github.com/daniellabrador"> <div class="social-icon"> <i class="fab fa-github"></i> </div> </a> </div> </div> <!-- To prevent reference error, I have to create this class --> <div class="clear-nav-bar" style="display:none"></div> <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile"> <div class="social"> <a href="https://go.daniellabrador.com/instagram"> <div class="social-icon"> <i class="fab fa-instagram"></i> </div> </a> <a href="https://go.daniellabrador.com/linkedin"> <div class="social-icon"> <i class="fab fa-linkedin-in"></i> </div> </a> <a href="https://github.com/daniellabrador"> <div class="social-icon"> <i class="fab fa-github"></i> </div> </a> </div> <hr> <ul> <a href="https://daniellabrador.com/cs1130"> <li>Home</li> </a> <a href="./conversion"> <li>Conversion</li> </a> <a href="./tax"> <li>Tax</li> </a> <a href="./loopify"> <li>Loopify</li> </a> <a href="./payroll"> <li>Payroll</li> </a> </ul> <div class="mobile-menu-close"><span class="noselect">Close</span><div id='mobile-menu-close'></div></div> </nav> </header>
+  
+  <!---------------  MAIN  ------------------>
+  <main><section class="col-grid">
+    <div class="description col-span-12">
+      <h1>Loopify</h1>
+      <p>Loopify is a calculator app that computes for the Nth factorial, the sum of the first N numbers, and the average of the first N numbers. The application can only accept 1 as the minimum number and <span id="max-number">#</span> as the maximum number. This project is intended to emphasize the use of while, do while and for loops. See <a href="http://github.com/daniellabrador/cs1130/">source code</a>.</p>
+    </div>
+    <div id="app-window" class="col-span-12"><div id="app-header-design"><div></div><div></div><div></div><p class="noselect">Loopify</p></div><div id="app-container"><div id="app">
+
+
+      <!--!--------------- APP WINDOW AND SCRIPT STARTS HERE ------------------>
+      <!--TODO: APPLICATION FORM -->
+      <form id="loopify">
+
+        <!-- Variable N Input Field -->
+        <div id="variable-n-container" class="calculator">
+          <div id="variable-n-container">
+            <input class="google-ui-converter" type="number" name="variable-n" id="variable-n" value="0" min="1" max="1000000" step="1"
+            onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <label for="variable-n">Value of <span>N</span></label>
+          </div>
+
+          <div id="factorial-container" class="result-container">
+            <input class="google-ui-converter" type="text" name="factorial-result" id="factorial-result" disabled>
+            <label for="factorial-result">N!</label>
+          </div>
+
+          <div id="sum-container" class="result-container">
+            <input class="google-ui-converter" type="text" name="sum-result" id="sum-result" disabled>
+            <label for="sum-result">Sum of the first N numbers</label>
+          </div>
+
+          <div id="average-container" class="result-container">
+            <input class="google-ui-converter" type="text" name="average-result" id="average-result" disabled>
+            <label for="average-result">Average of the first N numbers</label>
+          </div>
+        </div>
+      </form>
+
+      <!--TODO: JAVASCRIPT CALCULATION AND DOM MANIPULATION -->
+      <script>
+        // ACCESS HTML ELEMENTS
+        const variableN  = document.getElementById("variable-n")
+        const factorialResult  = document.getElementById("factorial-result")
+        const sumResult  = document.getElementById("sum-result")
+        const averageResult = document.getElementById("average-result")
+        const maxNumber = document.getElementById("max-number");
+
+        // DISABLE PASTE (PREVENTS USER TO INPUT THROUGH THEIR CLIPBOARD)
+        window.onload = () => {
+          variableN.onpaste = e => e.preventDefault();
+        }
+
+        // ADD COMMA
+        const addComma = value => {
+          return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        // SET MAX VALUE BASED ON #VARIABLE-N INPUT
+        maxNumber.innerHTML = addComma(variableN.max)
+
+        // CALCULATE FACTORIAL RESULT
+        const calculateFactorialResult = (event) => {
+          // Get form value
+          let variableNValue = event.target.value;
+          let nStart = variableNValue;
+          let result = 1;
+
+          // Change font size to fit numbers
+          if (variableNValue > 170) {
+            factorialResult.style.fontSize = '1.5em';
+          } else if (variableNValue > 20){
+            factorialResult.style.fontSize = '17.33px';
+          } else if (variableNValue > 17){
+            factorialResult.style.fontSize = `${24-(variableNValue/3)}px`
+          }
+
+          // Calculate by looping backwards
+          while (variableNValue > 1){ 
+            // Disregarded 1 for efficiency
+            result = result * variableNValue;
+            variableNValue--;
+          }
+
+          // Display result
+          if (nStart === ''){ 
+            factorialResult.value = ''
+          } else if (nStart < 22) {
+            factorialResult.value = addComma(result);
+          } else {
+            factorialResult.value = result
+          }
+        }
+
+        // CALCULATE SUM RESULT
+        const calculateSumResult = (event) => {
+          // Get form value
+          let variableNValue = Number(event.target.value);
+          let nStart = event.target.value;
+          let result = 0;
+
+          // Calculate by looping backwards
+          do { 
+            result = result + variableNValue;
+            variableNValue--;
+          } while (variableNValue > 0);
+
+          // Display result
+          if (nStart === ''){ 
+            sumResult.value = ''
+          } else {
+            sumResult.value = addComma(result);
+          }
+        }
+
+        // CALCULATE AVERAGE RESULT
+        const calculateAverageResult = (event) => {
+          // Get form value
+          let variableNValue = Number(event.target.value);
+          let startN = variableNValue;
+          let result = 0;
+
+          // Calculate by looping backwards
+          for (let n = variableNValue; n > 0; n--) {
+            result += n
+          }
+
+          // Divide by number of addends
+          result /= startN
+
+          // Display result
+          if (variableNValue === '' || variableNValue === 0){ 
+            averageResult.value = ''
+          } else {
+            averageResult.value = addComma(result);
+          }
+        }
+
+        // PREVENT FROM ADDING NUMBERS GREATER THAN MAX INPUT ALLOWED
+        const preventInsertNumber = (event) => {
+          const max = parseInt(event.target.max);
+
+          if (parseInt(event.target.value) > max) {
+            alert(`Max value reached! Please only input values below ${max}.`);
+            event.target.value = max; 
+          }
+          
+        }
+
+        // RUN ALL CALCULATIONS
+        const runCalculations = (event) => {
+          preventInsertNumber(event);
+          calculateFactorialResult(event);
+          calculateSumResult(event);
+          calculateAverageResult(event);
+        }
+
+        // ADD EVENT LISTENERS
+        variableN.addEventListener("keyup", runCalculations)
+
+      </script>
+
+      <!--!---------------- APP WINDOW AND SCRIPT ENDS HERE ------------------->
+
+
+
+
+    </div></div></div>
+  </section></main>
+  
+  <!-------------- FOOTER -----------------> <footer> <p class="copyright">&copy; <a href="https://daniellabrador.com">Thony Danielle Labrador</a> 2022. All Rights Reserved.</p> <div class="social"> <a href="https://go.daniellabrador.com/instagram"> <div class="social-icon"> <i class="fab fa-instagram"></i> </div> </a> <a href="https://go.daniellabrador.com/linkedin"> <div class="social-icon"> <i class="fab fa-linkedin-in"></i> </div> </a> <a href="https://github.com/daniellabrador"> <div class="social-icon"> <i class="fab fa-github"></i> </div> </a> </div> </footer></body>
+</html>

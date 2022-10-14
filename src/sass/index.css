@@ -1097,6 +1097,9 @@ header .main-logo {
   padding: 0.5em;
   margin-bottom: 1em;
   border: 1px solid #dadce0;
+  -webkit-appearance: none;
+  -webkit-text-fill-color: black;
+  opacity: 1; /* required on iOS */
   border-radius: 0.25em;
   background-color: #f8f9fa;
 }
@@ -1119,6 +1122,10 @@ header .main-logo {
 }
 #conversion-whiz .converter input[type=number] {
   -moz-appearance: textfield;
+}
+#conversion-whiz .converter .google-ui-converter {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
 }
 #conversion-whiz .converter label {
   padding: 0.75em;
@@ -1186,6 +1193,10 @@ header .main-logo {
 #nitrotax .calculator input[type=number] {
   -moz-appearance: textfield;
 }
+#nitrotax .calculator .google-ui-converter {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+}
 #nitrotax .calculator label {
   padding: 0.75em;
   display: block;
@@ -1196,6 +1207,9 @@ header .main-logo {
   border-top: 0px solid #dadce0;
 }
 #nitrotax .calculator #income-tax {
+  -webkit-text-fill-color: black;
+  opacity: 1; /* required on iOS */
+  color: black;
   background-color: #f8f9fa;
   cursor: not-allowed;
 }
@@ -1220,6 +1234,75 @@ header .main-logo {
   font-size: 0.95em;
   margin-left: 0.5em;
   font-weight: 400;
+}
+
+#app {
+  min-height: calc(100vh - 24.25em) !important;
+}
+
+#loopify {
+  display: flex;
+  padding-top: 2em;
+  justify-content: center;
+  flex-direction: column;
+}
+#loopify > div {
+  width: 500px;
+  margin: 0 auto;
+}
+#loopify .calculator {
+  display: grid;
+  gap: 1em;
+  grid-template: repeat(3, 1fr)/repeat(2, 1fr);
+}
+#loopify .calculator #variable-n-container {
+  grid-area: 2/1/span 1/span 1;
+}
+#loopify .calculator #factorial-container {
+  grid-area: 1/2/span 1/span 1;
+}
+#loopify .calculator #sum-container {
+  grid-area: 2/2/span 1/span 1;
+}
+#loopify .calculator #average-container {
+  grid-area: 3/2/span 1/span 1;
+}
+#loopify .calculator input {
+  width: 100%;
+  height: 50px;
+  font-size: 1.5em;
+  text-align: center;
+  border: 1px solid #dadce0;
+  /* Chrome, Safari, Edge, Opera */
+  /* Firefox */
+}
+#loopify .calculator input::-webkit-outer-spin-button, #loopify .calculator input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#loopify .calculator input[type=number] {
+  -moz-appearance: textfield;
+}
+#loopify .calculator .google-ui-converter {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+}
+#loopify .calculator label {
+  padding: 0.75em;
+  display: block;
+  text-align: center;
+  font-size: 0.85em;
+  background-color: #f8f9fa;
+  border: 1px solid #dadce0;
+  border-top: 0px solid #dadce0;
+}
+#loopify .calculator .result-container input {
+  -webkit-text-fill-color: black;
+  -webkit-border: black;
+  opacity: 1;
+  color: black;
+  background-color: #f8f9fa;
+  cursor: not-allowed;
 }
 
 main section .description p {

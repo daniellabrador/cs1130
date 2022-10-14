@@ -18,6 +18,9 @@
     padding: .5em;
     margin-bottom: 1em;
     border: 1px solid #dadce0;
+    -webkit-appearance: none;
+    -webkit-text-fill-color: black;
+    opacity: 1; /* required on iOS */
     border-radius: .25em;
     background-color: #f8f9fa;
   }
@@ -45,6 +48,11 @@
         -moz-appearance: textfield;
       }
     } 
+
+    .google-ui-converter {
+      -webkit-appearance: none;
+      -webkit-border-radius: 0px;
+    }
 
     label {
       padding: .75em;
