@@ -2,16 +2,16 @@
 <html lang="US">
 <head>
   <!-- PAGE META -->
-    <!-- Title:         ~Application -->
-    <!-- Description:   Maximum of 160 characters only. -->
-    <!-- Limitations:   Share limitations. -->
-    <!-- Purpose:       This project is intended to showcase HTML and JavaScript basics and DOM manipulation. -->
+    <!-- Title:         BillBooks -->
+    <!-- Description:   BillBooks is a simple pseudo-payroll application that accepts sets of input as objects representing the employees and their corresponding net pay and displays these entries in a table. -->
+    <!-- Limitations:   The program does not have a permanent storage system. So, the data will be wiped out when the webpage  is refreshed. -->
+    <!-- Purpose:       This project seeks to emphasize the use of JavaScript arrays and objects. -->
     <!-- Link Shortcut: -->
   
   <!-- DETAILS -->
-  <title>~Application | CS 1130 Projects</title>
+  <title>BillBooks | CS 1130 Projects</title>
   <meta name="author" content="Daniel Labrador">
-  <meta name="description" content="Maximum of 160 characters only.">
+  <meta name="description" content="BillBooks is a simple pseudo-payroll application that accepts sets of input as objects representing the employees and their corresponding net pay and displays these entries in a table.">
 
   <!-- DISPLAY -->
   <link rel="stylesheet" type="text/css" href="./src/sass/index.css">
@@ -34,14 +34,80 @@
   <!---------------  MAIN  ------------------>
   <main><section class="col-grid">
     <div class="description col-span-12">
-      <h1>~Application</h1>
-      <p>Maximum of 160 characters only. Share limitations. This project is intended to showcase HTML and JavaScript basics and DOM manipulation. See <a href="http://github.com/daniellabrador/cs1130/">source code</a>.</p>
+      <h1>BillBooks</h1>
+      <p>BillBooks is a simple pseudo-payroll application that accepts sets of input as objects representing the employees and their corresponding net pay and displays these entries in a table. This project seeks to emphasize the use of JavaScript arrays and objects. See <a href="http://github.com/daniellabrador/cs1130/">source code</a>.</p>
+      <p>This application also requires a minimum of 1600px screen width to be viewed properly. If the program does not fit to your screen, please zoom out. Also, the input you submit will not be stored and will be wiped out when you close or refresh the page.</p>
     </div>
-    <div id="app-window" class="col-span-12"><div id="app-header-design"><div></div><div></div><div></div><p class="noselect">~Application</p></div><div id="app-container"><div id="app">
-
-
+    <div id="app-window" class="col-span-12"><div id="app-header-design"><div></div><div></div><div></div><p class="noselect">BillBooks</p></div><div id="app-container" class="payroll"><div id="app"><div id="payroll">
       <!--!--------------- APP WINDOW AND SCRIPT STARTS HERE ------------------>
       <!--TODO: APPLICATION FORM -->
+      <section id="control-panel">
+        <nav aria-label="app-nav"><div id="billbooks-logo"><p>B</p></div><h2>BillBooks</h2></nav>
+
+        <!-- Payroll Form -->
+        <form class="billbooks" id="#payroll-form">
+          <label for="payroll-name">Employee Name
+            <input type="text" id="payroll-name" name="payroll-name" placeholder="John Doe" required>
+          </label>
+          <label for="payroll-days">Days Worked
+            <input type="number" id="payroll-days" name="payroll-days" placeholder="#" required>
+          </label>
+          <label for="payroll-rate">Daily Rate
+            <input type="number" id="payroll-rate" name="payroll-rate" placeholder="₱" required>
+          </label>
+          <label for="payroll-deduction">Deduction Amount
+            <input type="number" id="payroll-deduction" name="payroll-deduction" placeholder="₱" required>
+          </label>
+          <button type="submit" id="payroll-add-entry">Add Entry</button>
+        </form>
+
+        <hr>
+
+        <!-- Deletion Form -->
+        <form class="billbooks" id="payroll-delete">
+          <label for="payroll-id">Delete Entry No.
+            <input type="number" id="payroll-id" name="payroll-id" placeholder="No." required>
+          </label>
+          <button type="submit" id="payroll-remove-entry">Remove Entry</button>
+          <button type="submit" id="payroll-remove-all">Remove All</button>
+        </form>
+      </section>
+      <section class="display">
+        <table id="payroll-table">
+          <caption>Current Payroll</caption>
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Employee Name</th>
+              <th>Days Worked</th>
+              <th>Daily Rate</th>
+              <th>Gross Pay</th>
+              <th>Deduction Amount</th>
+              <th id="billbooks-net-pay">Net Pay</th>
+            </tr>
+          </thead>
+          <tbody id="payroll-table-body">
+            <tr>
+              <td>1</td>
+              <td>John Doe</td>
+              <td>10</td>
+              <td>₱100</td>
+              <td>1000</td>
+              <td>100</td>
+              <td>₱900</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Jane Doe</td>
+              <td>10</td>
+              <td>₱100</td>
+              <td>1000</td>
+              <td>100</td>
+              <td>₱900</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
       <!--TODO: JAVASCRIPT CALCULATION AND DOM MANIPULATION -->
       <script>
@@ -53,7 +119,7 @@
 
 
 
-    </div></div></div>
+    </div></div></div></div>
   </section></main>
   
   <!-------------- FOOTER -----------------> <footer> <p class="copyright">&copy; <a href="https://daniellabrador.com">Thony Danielle Labrador</a> 2022. All Rights Reserved.</p> <div class="social"> <a href="https://go.daniellabrador.com/instagram"> <div class="social-icon"> <i class="fab fa-instagram"></i> </div> </a> <a href="https://go.daniellabrador.com/linkedin"> <div class="social-icon"> <i class="fab fa-linkedin-in"></i> </div> </a> <a href="https://github.com/daniellabrador"> <div class="social-icon"> <i class="fab fa-github"></i> </div> </a> </div> </footer></body>

@@ -1305,6 +1305,129 @@ header .main-logo {
   cursor: not-allowed;
 }
 
+#app-container.payroll {
+  overflow-x: scroll;
+}
+
+.payroll #app {
+  position: relative;
+  display: block;
+  width: 1440px;
+  height: 100%;
+  z-index: 2 !important;
+  padding: 0 !important;
+}
+
+#payroll {
+  z-index: 100;
+  display: grid;
+  min-height: 60em;
+  grid-template: 1fr/23em 1fr;
+}
+#payroll #control-panel {
+  background-color: #393a3d;
+  color: white;
+}
+#payroll #control-panel nav {
+  margin: 3em 1.5em 2em;
+  display: flex;
+}
+#payroll #control-panel nav #billbooks-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.9em;
+  width: 1.75em;
+  color: white;
+  border: 1px solid #53b700;
+  background-color: #53b700;
+  border-radius: 0.25em;
+}
+#payroll #control-panel nav #billbooks-logo p {
+  display: block;
+  font-size: 1.5em;
+  font-weight: 900;
+  margin: 0;
+}
+#payroll #control-panel nav h2 {
+  margin: 0.1em 0.3em 0;
+}
+#payroll #control-panel hr {
+  margin: 3em auto;
+  width: 80%;
+  border: 0.25px solid rgba(255, 255, 255, 0.431372549);
+}
+#payroll #control-panel form.billbooks {
+  margin: 1.5em 1.2em;
+  display: flex;
+  flex-direction: column;
+}
+#payroll #control-panel form.billbooks label {
+  margin: 0.5em 0;
+  display: flex;
+  flex-direction: column;
+}
+#payroll #control-panel form.billbooks label span {
+  margin-bottom: 0.5em;
+}
+#payroll #control-panel form.billbooks label input {
+  padding: 0.5em;
+  width: 100%;
+  border: 1px solid #53b700;
+  border-radius: 0.25em;
+}
+#payroll #control-panel form.billbooks button {
+  margin: 1em 0 0;
+  padding: 0.5em;
+  border: 1px solid #53b700;
+  border-radius: 0.25em;
+  background-color: #53b700;
+  color: white;
+  font-weight: 900;
+  cursor: pointer;
+}
+#payroll #control-panel form.billbooks #payroll-remove-entry {
+  background-color: #f34541;
+  border: 1px solid #f34541;
+}
+#payroll #control-panel form.billbooks #payroll-remove-all {
+  background-color: #ffefef;
+  color: #ff0000;
+  border: 1px solid #f34541;
+}
+#payroll .display {
+  padding: 1.5em 1.2em;
+}
+#payroll .display caption {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 1em 0;
+  text-align: left;
+}
+#payroll .display table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #53b700;
+  border-radius: 0.25em;
+  margin: 0 0 1.5em 0;
+}
+#payroll .display table thead {
+  background-color: #53b700;
+  color: white;
+}
+#payroll .display table thead tr th {
+  padding: 0.5em;
+  text-align: left;
+}
+#payroll .display table thead tr #billbooks-net-pay {
+  width: 12.5em;
+}
+#payroll .display table tbody tr td {
+  padding: 0.5em;
+  border-bottom: 1px solid #53b700;
+}
+
 main section .description p {
   font-weight: normal;
   margin: 0.5em 0 0;

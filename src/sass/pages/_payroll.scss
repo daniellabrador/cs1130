@@ -1,0 +1,148 @@
+#app-container.payroll {
+  overflow-x: scroll;
+}
+
+.payroll #app {
+  position: relative;
+  display: block;
+  width: 1440px;
+  height: 100%;
+  z-index: 2 !important;
+  padding: 0 !important;
+}
+
+#payroll {
+  z-index: 100;
+  display: grid;
+  min-height: 60em;
+  grid-template: 1fr / 23em 1fr;
+
+  #control-panel {
+    background-color: #393a3d;
+    color: white;
+
+    nav {
+      margin: 3em 1.5em 2em;
+      display: flex;
+
+      #billbooks-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 1.9em;
+        width: 1.75em;
+        color: white;
+        border: 1px solid #53b700;
+        background-color: #53b700;
+        border-radius: .25em;
+
+        p {
+          display: block;
+          font-size: 1.5em;
+          font-weight: 900;
+          margin: 0;
+        }
+      }
+
+      h2 {
+        margin: .1em .3em 0 ;
+      }
+    }
+
+    hr {
+      margin: 3em auto;
+      width: 80%;
+      border: .25px solid #ffffff6e;
+    }
+
+    form.billbooks {
+      margin: 1.5em 1.2em;
+      display: flex;
+      flex-direction: column;
+
+      label {
+        margin: .5em 0;
+        display: flex;
+        flex-direction: column;
+
+        span {
+          margin-bottom: .5em;
+        }
+
+        input {
+          padding: .5em;
+          width: 100%;
+          border: 1px solid #53b700;
+          border-radius: .25em;
+        }
+      }
+
+      button {
+        margin: 1em 0 0;
+        padding: .5em;
+        border: 1px solid #53b700;
+        border-radius: .25em;
+        background-color: #53b700;
+        color: white;
+        font-weight: 900;
+        cursor: pointer;
+      }
+
+      #payroll-remove-entry{
+        background-color: #f34541;
+        border: 1px solid #f34541;   
+      }
+
+      #payroll-remove-all {
+        background-color: #ffefef;
+        color: #ff0000;
+        border: 1px solid #f34541;
+      }
+    }
+  }
+
+  .display {
+    padding: 1.5em 1.2em;
+
+    caption {
+      font-size: 1.5em;
+      font-weight: 700;
+      margin: 1em 0;
+      text-align: left;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      border: 1px solid #53b700;
+      border-radius: .25em;
+      margin: 0 0 1.5em 0;
+
+      thead {
+        background-color: #53b700;
+        color: white;
+
+        tr {
+          th {
+            padding: .5em;
+            text-align: left;
+          }
+
+          #billbooks-net-pay{
+            width: 12.5em;
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          td {
+            padding: .5em;
+            border-bottom: 1px solid #53b700;
+          }
+        }
+      }
+    }
+  }
+}
