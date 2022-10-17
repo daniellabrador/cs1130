@@ -45,7 +45,7 @@
         <nav aria-label="app-nav"><div id="billbooks-logo"><p>B</p></div><h2>BillBooks</h2></nav>
 
         <!-- Payroll Form -->
-        <form class="billbooks" id="#payroll-form">
+        <form class="billbooks" id="payroll-form">
           <label for="payroll-name">Employee Name
             <input type="text" id="payroll-name" name="payroll-name" placeholder="John Doe" required>
           </label>
@@ -87,31 +87,60 @@
             </tr>
           </thead>
           <tbody id="payroll-table-body">
-            <tr>
-              <td>1</td>
-              <td>John Doe</td>
-              <td>10</td>
-              <td>₱100</td>
-              <td>1000</td>
-              <td>100</td>
-              <td>₱900</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Jane Doe</td>
-              <td>10</td>
-              <td>₱100</td>
-              <td>1000</td>
-              <td>100</td>
-              <td>₱900</td>
-            </tr>
           </tbody>
         </table>
       </section>
 
       <!--TODO: JAVASCRIPT CALCULATION AND DOM MANIPULATION -->
-      <script>
+      <script>        
+        // ACCESS HTML ELEMENTS
+        const payrollForm = document.getElementById('payroll-form');
+        const payrollDelete = document.getElementById('payroll-delete');
+        const payrollTable = document.getElementById('payroll-table');
+        const payrollTableBody = document.getElementById('payroll-table-body');
 
+        // ADD COMMA
+        const addComma = value => {
+          return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        // INITIALIZE VARIABLES
+        let payrollEntries = [];
+        
+        // ADD ENTRY
+        payrollForm.addEventListener('submit', event => {
+          event.preventDefault();
+          const payrollName = document.getElementById('payroll-name').value;
+          const payrollDays = document.getElementById('payroll-days').value;
+          const payrollRate = document.getElementById('payroll-rate').value;
+          const payrollDeduction = document.getElementById('payroll-deduction').value;
+          const payrollGrossPay = payrollDays * payrollRate;
+          const payrollNetPay = payrollGrossPay - payrollDeduction;
+          const payrollEntry = {
+            name: payrollName,
+            days: payrollDays,
+            rate: payrollRate,
+            deduction: payrollDeduction,
+            grossPay: payrollGrossPay,
+            netPay: payrollNetPay
+          };
+          payrollEntries.push(payrollEntry);
+          payrollForm.reset();
+          payrollTableBody.innerHTML = '';
+          payrollEntries.forEach((entry, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td>${index + 1}</td>
+              <td>${entry.name}</td>
+              <td>${entry.days}</td>
+              <td>₱${addComma(entry.rate)}</td>
+              <td>₱${addComma(entry.grossPay)}</td>
+              <td>₱${addComma(entry.deduction)}</td>
+              <td>₱${addComma(entry.netPay)}</td>
+            `;
+            payrollTableBody.appendChild(row);
+          });
+        });
       </script>
 
       <!--!---------------- APP WINDOW AND SCRIPT ENDS HERE ------------------->
