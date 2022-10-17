@@ -145,6 +145,28 @@
           });
         });
 
+        // REMOVE ENTRY
+        payrollDelete.addEventListener('submit', event => {
+          event.preventDefault();
+          const payrollId = document.getElementById('payroll-id').value;
+          payrollEntries.splice(payrollId - 1, 1);
+          payrollDelete.reset();
+          payrollTableBody.innerHTML = '';
+          payrollEntries.forEach((entry, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td>${index + 1}</td>
+              <td>${entry.name}</td>
+              <td>${entry.days}</td>
+              <td>${addComma(entry.rate)}</td>
+              <td>${addComma(entry.grossPay)}</td>
+              <td>${addComma(entry.deduction)}</td>
+              <td>₱${addComma(entry.netPay)}</td>
+            `;
+            payrollTableBody.appendChild(row);
+          });
+        });
+
       </script>
 
       <!--!---------------- APP WINDOW AND SCRIPT ENDS HERE ------------------->
