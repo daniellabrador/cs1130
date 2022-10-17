@@ -28,8 +28,8 @@
   <script src="./src/script/index.js" defer></script>
 </head>
 
-<body>
-  <!-------------- HEADER -----------------><header><div class="nav-bar" id="nav-bar"><div class="mobile-menu nav-bar-element" id="mobile-menu-open"><span class="noselect"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><style>path {fill: #fff}</style><g fill="var(--color-default)"><path d="M8 14h7a1 1 0 000-2H8a1 1 0 000 2zM1 4h14a1 1 0 000-2H1a1 1 0 000 2zM1 9h14a1 1 0 000-2H1a1 1 0 000 2z"></path></g></svg> </span> </div> <div class="main-navigation-items"> <div id="main-logo-container" class="main-logo-container nav-bar-element"> <span class="main-logo-text noselect">Daniel Labrador</span> <a href="http://daniellabrador.com" class = "main-logo-link"> <img id="main-logo" src="./src/img/logo/SVG/logo-light.svg" alt="Brand logo" class="main-logo mobile"> </a> </div> <nav class="desktop-nav" aria-label="Desktop"> <ul> <a href="https://daniellabrador.com/cs1130"> <li>Home</li> </a> <a href="./conversion"> <li>Conversion</li> </a> <a href="./tax"> <li>Tax</li> </a> <a href="./loopify"> <li>Loopify</li> </a> <a href="./payroll"> <li>Payroll</li> </a> </ul> </nav> </div> <div class="social nav-bar-element"> <a href="https://go.daniellabrador.com/instagram"> <div class="social-icon"> <i class="fab fa-instagram"></i> </div> </a> <a href="https://go.daniellabrador.com/linkedin"> <div class="social-icon"> <i class="fab fa-linkedin-in"></i> </div> </a> <a href="https://github.com/daniellabrador"> <div class="social-icon"> <i class="fab fa-github"></i> </div> </a> </div> </div> <!-- To prevent reference error, I have to create this class --> <div class="clear-nav-bar" style="display:none"></div> <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile"> <div class="social"> <a href="https://go.daniellabrador.com/instagram"> <div class="social-icon"> <i class="fab fa-instagram"></i> </div> </a> <a href="https://go.daniellabrador.com/linkedin"> <div class="social-icon"> <i class="fab fa-linkedin-in"></i> </div> </a> <a href="https://github.com/daniellabrador"> <div class="social-icon"> <i class="fab fa-github"></i> </div> </a> </div> <hr> <ul> <a href="https://daniellabrador.com/cs1130"> <li>Home</li> </a> <a href="./conversion"> <li>Conversion</li> </a> <a href="./tax"> <li>Tax</li> </a> <a href="./loopify"> <li>Loopify</li> </a> <a href="./payroll"> <li>Payroll</li> </a> </ul> <div class="mobile-menu-close"><span class="noselect">Close</span><div id='mobile-menu-close'></div></div> </nav> </header>
+<body id="body-home-page">
+  <!-------------- HEADER -----------------><header><div class="nav-bar" id="nav-bar"><div class="mobile-menu nav-bar-element" id="mobile-menu-open"><span class="noselect"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"><style>path {fill: #fff}</style><g fill="var(--color-default)"><path d="M8 14h7a1 1 0 000-2H8a1 1 0 000 2zM1 4h14a1 1 0 000-2H1a1 1 0 000 2zM1 9h14a1 1 0 000-2H1a1 1 0 000 2z"></path></g></svg> </span> </div> <div class="main-navigation-items"> <div id="main-logo-container" class="main-logo-container nav-bar-element"> <span class="main-logo-text noselect">Daniel Labrador</span> <a href="http://daniellabrador.com" class = "main-logo-link"> <img id="main-logo" src="./src/img/logo/SVG/logo-light.svg" alt="Brand logo" class="main-logo mobile"> </a> </div> <nav class="desktop-nav" aria-label="Desktop"> <ul> <a href="https://daniellabrador.com/cs1130"> <li>Home</li> </a> <a href="./conversion"> <li>Conversion</li> </a> <a href="./nitrotax"> <li>NitroTax</li> </a> <a href="./loopify"> <li>Loopify</li> </a> <a href="./billbooks"> <li>BillBooks</li> </a> </ul> </nav> </div> <div class="social nav-bar-element"> <a href="https://go.daniellabrador.com/instagram"> <div class="social-icon"> <i class="fab fa-instagram"></i> </div> </a> <a href="https://go.daniellabrador.com/linkedin"> <div class="social-icon"> <i class="fab fa-linkedin-in"></i> </div> </a> <a href="https://github.com/daniellabrador"> <div class="social-icon"> <i class="fab fa-github"></i> </div> </a> </div> </div> <!-- To prevent reference error, I have to create this class --> <div class="clear-nav-bar" style="display:none"></div> <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile"> <div class="social"> <a href="https://go.daniellabrador.com/instagram"> <div class="social-icon"> <i class="fab fa-instagram"></i> </div> </a> <a href="https://go.daniellabrador.com/linkedin"> <div class="social-icon"> <i class="fab fa-linkedin-in"></i> </div> </a> <a href="https://github.com/daniellabrador"> <div class="social-icon"> <i class="fab fa-github"></i> </div> </a> </div> <hr> <ul> <a href="https://daniellabrador.com/cs1130"> <li>Home</li> </a> <a href="./conversion"> <li>Conversion</li> </a> <a href="./nitrotax"> <li>NitroTax</li> </a> <a href="./loopify"> <li>Loopify</li> </a> <a href="./billbooks"> <li>BillBooks</li> </a> </ul> <div class="mobile-menu-close"><span class="noselect">Close</span><div id='mobile-menu-close'></div></div> </nav> </header>
   
   <!---------------  MAIN  ------------------>
   <main><section class="col-grid">
@@ -43,10 +43,63 @@
       
       <p>See <a href="http://github.com/daniellabrador/cs1130/">source code</a>.</p>
     </div>
-    <div id="app-list">
-      Applications will be listed here soon.
+    <section id="app-list">
+      <div class="projects-container col-grid" id="projects">
+
+        <a href="./conversion" class="no-text-decoration col-span-6">
+          <figure class="project col-span-6">
+              <div class="project-image" style="background-image: url(./src/img/index/conversion.jpg);">
+              
+              </div>
+              <figcaption class="project-caption">
+                  <h3 class="project-title">#1 Conversion Whiz</h3>
+                  <p class="project-description">Conversion Whiz is a conversion tool for temperature and length units. This tool is only limited to Fahrenheit, Celsius, meter, and foot units.</p>
+                  <p class="project-skills">Focus: HTML and JavaScript basics and DOM manipulation</p>
+              </figcaption>
+          </figure>
+        </a>
+
+        <a href="./nitrotax" class="no-text-decoration col-span-6">
+          <figure class="project col-span-6">
+              <div class="project-image" style="background-image: url(./src/img/index/tax.jpg);">
+              
+              </div>
+              <figcaption class="project-caption">
+                  <h3 class="project-title"> #2 NitroTax</h3>
+                  <p class="project-description">NitroTax is a tax calculator application that is designed to compute the income tax of a given net taxable income based on the graduated income tax table of the TRAIN law.</p>
+                  <p class="project-skills">Focus: JavaScript conditional statements</p>
+              </figcaption>
+          </figure>
+        </a>
+
+        <a href="./loopify" class="no-text-decoration col-span-6">
+          <figure class="project col-span-6">
+              <div class="project-image" style="background-image: url(./src/img/index/loopify.jpg);">
+              
+              </div>
+              <figcaption class="project-caption">
+                  <h3 class="project-title">#3 Loopify</h3>
+                  <p class="project-description">Loopify is a calculator app that computes for the Nth factorial, the sum of the first N numbers, and the average of the first N numbers.</p>
+                  <p class="project-skills">Focus: JavaScript while, do while and for loops</p>
+              </figcaption>
+          </figure>
+        </a>
+
+        <a href="./billbooks" class="no-text-decoration col-span-6">
+          <figure class="project col-span-6">
+              <div class="project-image" style="background-image: url(./src/img/index/billbooks.jpg);">
+              
+              </div>
+              <figcaption class="project-caption">
+                  <h3 class="project-title">#4 BillBooks</h3>
+                  <p class="project-description">BillBooks is a simple pseudo-payroll application that accepts sets of input as objects representing the employees and their corresponding net pay and displays these entries in a table.</p>
+                  <p class="project-skills">Focus: JavaScript arrays and objects</p>
+              </figcaption>
+          </figure>
+        </a>
     </div>
+    </section>
   </section></main>
   
-  <!-------------- FOOTER -----------------> <footer> <p class="copyright">&copy; <a href="https://daniellabrador.com">Thony Danielle Labrador</a> 2022. All Rights Reserved.</p> <div class="social"> <a href="https://go.daniellabrador.com/instagram"> <div class="social-icon"> <i class="fab fa-instagram"></i> </div> </a> <a href="https://go.daniellabrador.com/linkedin"> <div class="social-icon"> <i class="fab fa-linkedin-in"></i> </div> </a> <a href="https://github.com/daniellabrador"> <div class="social-icon"> <i class="fab fa-github"></i> </div> </a> </div> </footer></body>
+  <!-------------- FOOTER -----------------> <footer id="footer-home-page"> <p class="copyright">&copy; <a href="https://daniellabrador.com">Thony Danielle Labrador</a> 2022. All Rights Reserved.</p> <div class="social"> <a href="https://go.daniellabrador.com/instagram"> <div class="social-icon"> <i class="fab fa-instagram"></i> </div> </a> <a href="https://go.daniellabrador.com/linkedin"> <div class="social-icon"> <i class="fab fa-linkedin-in"></i> </div> </a> <a href="https://github.com/daniellabrador"> <div class="social-icon"> <i class="fab fa-github"></i> </div> </a> </div> </footer></body>
 </html>
