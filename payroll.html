@@ -50,13 +50,13 @@
             <input type="text" id="payroll-name" name="payroll-name" placeholder="John Doe" required>
           </label>
           <label for="payroll-days">Days Worked
-            <input type="number" id="payroll-days" name="payroll-days" placeholder="#" required>
+            <input type="number" id="payroll-days" name="payroll-days" placeholder="#" step="0.01" required>
           </label>
           <label for="payroll-rate">Daily Rate
-            <input type="number" id="payroll-rate" name="payroll-rate" placeholder="₱" required>
+            <input type="number" id="payroll-rate" name="payroll-rate" placeholder="₱" step="0.01" required>
           </label>
           <label for="payroll-deduction">Deduction Amount
-            <input type="number" id="payroll-deduction" name="payroll-deduction" placeholder="₱" required>
+            <input type="number" id="payroll-deduction" name="payroll-deduction" placeholder="₱" step="0.01" required>
           </label>
           <button type="submit" id="payroll-add-entry">Add Entry</button>
         </form>
@@ -99,9 +99,12 @@
         const payrollTable = document.getElementById('payroll-table');
         const payrollTableBody = document.getElementById('payroll-table-body');
 
-        // ADD COMMA
-        const addComma = value => {
-          return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        // DISPLAY AS CURRENCY WITHOUT THE SIGN
+        const addComma = number => {
+          return number.toLocaleString('en', { 
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2 
+          });;
         }
 
         // INITIALIZE VARIABLES
@@ -133,14 +136,15 @@
               <td>${index + 1}</td>
               <td>${entry.name}</td>
               <td>${entry.days}</td>
-              <td>₱${addComma(entry.rate)}</td>
-              <td>₱${addComma(entry.grossPay)}</td>
-              <td>₱${addComma(entry.deduction)}</td>
+              <td>${addComma(entry.rate)}</td>
+              <td>${addComma(entry.grossPay)}</td>
+              <td>${addComma(entry.deduction)}</td>
               <td>₱${addComma(entry.netPay)}</td>
             `;
             payrollTableBody.appendChild(row);
           });
         });
+
       </script>
 
       <!--!---------------- APP WINDOW AND SCRIPT ENDS HERE ------------------->
