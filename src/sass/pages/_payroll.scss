@@ -70,6 +70,7 @@
         }
 
         input {
+          margin-top: .25em;
           padding: .5em;
           width: 100%;
           border: 1px solid #53b700;
@@ -98,6 +99,10 @@
         color: #ff0000;
         border: 1px solid #f34541;
       }
+    }
+
+    #payroll-delete-all {
+      margin-top: 14em;
     }
   }
 

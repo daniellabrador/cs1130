@@ -1371,6 +1371,7 @@ header .main-logo {
   margin-bottom: 0.5em;
 }
 #payroll #control-panel form.billbooks label input {
+  margin-top: 0.25em;
   padding: 0.5em;
   width: 100%;
   border: 1px solid #53b700;
@@ -1394,6 +1395,9 @@ header .main-logo {
   background-color: #ffefef;
   color: #ff0000;
   border: 1px solid #f34541;
+}
+#payroll #control-panel #payroll-delete-all {
+  margin-top: 14em;
 }
 #payroll .display {
   padding: 1.5em 1.2em;

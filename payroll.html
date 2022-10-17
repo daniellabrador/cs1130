@@ -69,8 +69,12 @@
             <input type="number" id="payroll-id" name="payroll-id" placeholder="No." required>
           </label>
           <button type="submit" id="payroll-remove-entry">Remove Entry</button>
-          <button type="submit" id="payroll-remove-all">Remove All</button>
         </form>
+
+        <form class="billbooks" id="payroll-delete-all">
+          <button type="submit" id="payroll-remove-all">Clear All</button>
+        </form>
+
       </section>
       <section class="display">
         <table id="payroll-table">
@@ -96,6 +100,7 @@
         // ACCESS HTML ELEMENTS
         const payrollForm = document.getElementById('payroll-form');
         const payrollDelete = document.getElementById('payroll-delete');
+        const payrollDeleteAll = document.getElementById('payroll-delete-all');
         const payrollTable = document.getElementById('payroll-table');
         const payrollTableBody = document.getElementById('payroll-table-body');
 
@@ -167,6 +172,16 @@
           });
         });
 
+        // REMOVE ALL
+        payrollDeleteAll.addEventListener('submit', event => {
+          event.preventDefault();
+          const actionConfirmed = confirm('Are you sure you want to clear all entries?')
+
+          if (actionConfirmed) {
+            payrollEntries = [];
+            payrollTableBody.innerHTML = '';
+          }
+        });
       </script>
 
       <!--!---------------- APP WINDOW AND SCRIPT ENDS HERE ------------------->
