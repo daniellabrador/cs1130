@@ -87,7 +87,7 @@ During Deletion, the program should ask for the Line Number to delete and update
 
 Upload all codes to Daigler20 and launch the pages in your w3spaces.com  website or any other free hosting site (github.io)
 
-## technologies
+## Technologies
 
 These are the technologies that were required to use. Other languages and frameworks utilized are secondary.
 
