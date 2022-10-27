@@ -1163,6 +1163,10 @@ header .main-logo {
   width: 500px;
   margin: 0 auto;
 }
+#conversion-whiz #conversion-type-container label {
+  display: block;
+  margin-bottom: 0.5em;
+}
 #conversion-whiz #conversion-type {
   width: 100%;
   padding: 0.5em;
